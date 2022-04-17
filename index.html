@@ -63,7 +63,7 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero-header">EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU</h1>
-          <button class="modal-btn" type="button">Zamów usługę</button>
+          <button class="modal-btn" type="button" data-modal-open>Zamów usługę</button>
         </div>
       </section>
       <!-- Our strengths -->
@@ -454,10 +454,11 @@
         </div>
       </div>
     </footer>
-    <div class="backdrop is-hidden">
+    <div class="backdrop is-hidden" data-modal>
       <div class="modal">
-        <button type="button" class="close-btn">x</button>
+        <button type="button" class="close-btn" data-modal-close>x</button>
       </div>
     </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
