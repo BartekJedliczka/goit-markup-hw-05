@@ -515,8 +515,12 @@ img {
 }
 
 .project-list-item {
-  background-color: var(--white-bgc);
+  position: relative;
   margin-bottom: 30px;
+  background: var(--light-bgc);
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-list-item:hover,
@@ -525,7 +529,13 @@ img {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.project-list-item:hover .overlay {
+  transform: translateY(0);
+}
+
 .project-list-wraper {
+  position: relative;
+  background: var(--white-bgc);
   border-right: 1px solid var(--second-bgc);
   border-bottom: 1px solid var(--second-bgc);
   border-left: 1px solid var(--second-bgc);
@@ -550,6 +560,27 @@ img {
   line-height: 1.875;
   letter-spacing: 0.03em;
   color: var(--second-colorFont);
+}
+
+.overlay {
+  position: absolute;
+  display: flex;
+  padding-left: 24px;
+  padding-right: 45px;
+  height: 294px;
+  top: 0;
+  background: rgba(33, 150, 243, 0.9);
+  transform: translateY(295px);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overlay-text {
+  margin: auto;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.556;
+  color: var(--white-color);
+  letter-spacing: 0.03em;
 }
 
 /* ========== END PROJECT ========== */
