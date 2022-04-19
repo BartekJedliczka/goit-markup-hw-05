@@ -120,10 +120,12 @@ img {
 
 .navigation-list-link {
   color: var(--main-color);
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-list-link {
   color: var(--grey-color);
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-list-icon:hover,
@@ -302,6 +304,26 @@ img {
   margin-right: 30px;
 }
 
+.work-list-item {
+  position: relative;
+}
+
+.work-list-text {
+  position: absolute;
+  display: block;
+  top: 224px;
+  padding: 27px;
+  width: 370px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.143;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white-color);
+  background: rgba(47, 48, 58, 0.8);
+}
+
 /* ========== END WORK ========== */
 
 /* ========== OUR TEAM ========== */
@@ -363,6 +385,8 @@ img {
   background-color: var(--white-color);
   fill: var(--icon-color);
   border-radius: 50%;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    fill 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our-social-link:hover,
@@ -393,6 +417,7 @@ img {
   border: 1px solid var(--icon-color);
   border-radius: 4px;
   fill: var(--icon-color);
+  transition: border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), fill 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our-customer-list-link:hover,
@@ -430,10 +455,12 @@ img {
 }
 .footer-address-list-map {
   color: var(--white-color);
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-address-list-link {
   color: rgba(255, 255, 255, 0.6);
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-address-list-map:hover,
@@ -471,6 +498,8 @@ img {
   background: rgba(255, 255, 255, 0.1);
   fill: var(--white-color);
   border-radius: 50%;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    fill 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-list-link:hover,
@@ -609,42 +638,58 @@ img {
 
 .backdrop {
   position: fixed;
-  width: 100%;
+  top: 0;
+  left: 0;
   height: 100%;
-  left: 0px;
-  top: 0px;
+  width: 100%;
   background: rgba(0, 0, 0, 0.2);
-}
-
-.modal {
-  position: absolute;
-  width: 528px;
-  height: 581px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: #ffffff;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-}
-
-.close-btn {
-  position: absolute;
-  right: 8px;
-  top: 8px;
-  width: 30px;
-  height: 30px;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  cursor: pointer;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  min-height: 581px;
+  background: var(--white-bgc);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1);
+  opacity: 1;
+}
+
+.is-hidden .modal {
+  transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+  opacity: 0;
+}
+
+.modal-btn-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background: var(--white-bgc);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  fill: black;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }
 
 /* ========== END BACKDROP ========== */
