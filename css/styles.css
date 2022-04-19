@@ -74,6 +74,7 @@ img {
 .navigation-list-link,
 .address-list-link {
   font-weight: 500;
+  font-style: normal;
   font-size: 14px;
   line-height: 1.143;
   letter-spacing: 0.02em;
@@ -149,6 +150,10 @@ img {
   margin-right: 93px;
 }
 
+.navigation-list-item {
+  position: relative;
+}
+
 .navigation-list {
   display: flex;
   align-items: center;
@@ -159,6 +164,21 @@ img {
 
 .navigation-list-item:not(:last-child) {
   margin-right: 46px;
+}
+
+.navigation-list-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 46px;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+  border-radius: 2px;
+}
+
+.navigation-list-link.active::after {
+  background-color: var(--blue-color);
 }
 
 .address-list {
